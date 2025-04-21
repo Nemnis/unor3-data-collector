@@ -1,10 +1,21 @@
-.bar {
+#char-hum-wrap .bar {
     stroke: #222222;
-    fill: #898989;
+    fill: #523ad6;
 }
-.bar:hover {
-    fill: #ff9059;
+
+#char-temp-wrap .bar {
+    stroke: #222222;
+    fill: #80d63a;
 }
+
+#char-hum-wrap .bar:hover {
+    fill: #644cee;
+}
+
+#char-temp-wrap .bar:hover {
+    fill: #abfa6a;
+}
+
 .axis-label {
     font-size: 12px;
     font-family: sans-serif;
@@ -20,6 +31,13 @@
 .graph-container {
     display: grid;
     grid-template-columns: 50% 50%;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.graph-container svg {
+    display: block;
+    margin: 0 auto;
 }
 
 .select-wrap label {
@@ -79,8 +97,8 @@ input.styled {
 }
 
 input.styled:checked {
-    background-color: #ff9059;
-    border-color: #ff9059;
+    background-color: #523ad6;
+    border-color: #523ad6;
 }
 input.styled:checked::before {
     content: '✔';
@@ -88,7 +106,7 @@ input.styled:checked::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #222222;
+    color: #ffffff;
 }
 
 #char-hum-wrap.hidden,
@@ -119,7 +137,7 @@ input.styled:checked::before {
 .container-collector-info {
     border: 1px dashed #4b4b4b;
     margin: 1rem;
-    padding: 1rem 1rem 2.5rem 2.5rem;
+    padding: 2rem 1rem 2.5rem 2.5rem;
     border-radius: 2.5rem 0.5rem 0.5rem 0.5rem;
 }
 
@@ -136,14 +154,14 @@ input.styled:checked::before {
     font-size: 1.33rem;
     line-height: 1.33rem;
     margin-bottom: 0;
-    color: #ffcd59;
+    color: #ffffff;
 }
 
 .container-collector-info .collector-grid .text-content h4 {
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 1rem;
-    color: #957939;
+    color: #959595;
 }
 
 .container-collector-info .collector-grid .text-content p {
@@ -153,7 +171,7 @@ input.styled:checked::before {
 
 .container-collector-info .collector-grid .text-content p span {
     display: block;
-    color: #ffa071;
+    color: #03aef3;
 }
 
 .container-data {
@@ -194,11 +212,6 @@ input.styled:checked::before {
 	.graph-container {
         grid-template-columns: 100%;
         gap: 3rem;
-    }
-
-    .graph-container svg {
-        display: block;
-        margin: 0 auto;
     }
 }
 

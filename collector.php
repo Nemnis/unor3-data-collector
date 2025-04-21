@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 	<?php include 'web/views/common/head.php' ?>
-	<link rel="stylesheet" href="/web/styles/chars.css">
+	<link rel="stylesheet" href="./web/styles/chars.css">
 </head>
 <body> 
 	<div class="fh">
 		<!-- Nav -->
-		<?php include 'web/views/common/nav.php'; ?>
+		<?php include './web/views/common/nav.php'; ?>
 
 <!-- Title -->
 <div class="title_main title_collector p1-rl">
@@ -109,12 +109,7 @@ ________  _________
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.js"></script>
 	<script>
-		/*d3.csv("/datacollector/data/dataSensors.csv").then(function(data){
-			console.log(data);
-
-		});*/
-
-		// html view element
+		// HTML view element
 		const pDataHum = document.getElementById('dataHum');
 		const pDataTemp = document.getElementById('dataTemp');
         // config svg
@@ -165,7 +160,7 @@ ________  _________
         };
 
         // load CSV
-        d3.csv("/datacollector/data/dataSensors.csv").then(data => {
+        d3.csv("./datacollector/data/dataSensors.csv").then(data => {
 			console.log(data);
 
 			// data cheker

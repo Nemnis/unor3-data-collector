@@ -29,8 +29,7 @@
 }
 
 .container-line {
-	width: calc(100% - 2rem);
-    max-width: 50rem;
+	width: 100%;
     margin: 0 auto;
     border: 1px solid #4b4b4b;
     border-radius: 3.5rem 0.5rem 0.5rem 0.5rem;
