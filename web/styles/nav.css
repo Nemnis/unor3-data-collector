@@ -1,0 +1,19 @@
+nav {
+    padding: 1rem 0;
+}
+
+nav ul {
+	display: flex;
+	flex-flow: row wrap;
+	text-align: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+nav ul li {
+	list-style: none;
+}
+
+nav ul li.active a {
+    color: #ff9059;    
+}

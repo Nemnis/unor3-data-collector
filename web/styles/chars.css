@@ -1,0 +1,217 @@
+.bar {
+    stroke: #222222;
+    fill: #898989;
+}
+.bar:hover {
+    fill: #ff9059;
+}
+.axis-label {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.chart-title {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.graph-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.select-wrap label {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+g.tick {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.5rem;
+}
+
+.select-wrap {
+    border: 1px dashed #4b4b4b;
+    text-align: center;
+    padding: 1rem 1rem 1rem 2.5rem;
+    margin: 1rem;
+    border-radius: 2.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #272727;
+}
+
+.select-wrap h2 {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.select-wrap .filter {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-left: 1px solid #959595;
+    gap: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 1rem;
+}
+
+input.styled {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #555;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+input.styled:checked {
+    background-color: #ff9059;
+    border-color: #ff9059;
+}
+input.styled:checked::before {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #222222;
+}
+
+#char-hum-wrap.hidden,
+#char-temp-wrap.hidden {
+    display: none;
+}
+
+#data-selector {
+    appearance: base-select;
+    border: 2px solid #ddd;
+    background: #222222;
+    padding: 0.25rem;
+    transition: 0.4s;
+    font-size: 0.8rem;
+}
+
+#data-selector:hover {
+    cursor: pointer;
+}
+
+#data-selector:hover,
+#data-selector:focus {
+  background: #ddd;
+  color: #222222;
+}
+
+/* Data info */
+.container-collector-info {
+    border: 1px dashed #4b4b4b;
+    margin: 1rem;
+    padding: 1rem 1rem 2.5rem 2.5rem;
+    border-radius: 2.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.container-collector-info h2 {
+    margin-bottom: 2rem;
+}
+
+.container-collector-info .collector-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container-collector-info .collector-grid .text-content h3 {
+    font-size: 1.33rem;
+    line-height: 1.33rem;
+    margin-bottom: 0;
+    color: #ffcd59;
+}
+
+.container-collector-info .collector-grid .text-content h4 {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    color: #957939;
+}
+
+.container-collector-info .collector-grid .text-content p {
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.container-collector-info .collector-grid .text-content p span {
+    display: block;
+    color: #ffa071;
+}
+
+.container-data {
+    padding: 1rem;
+    background-color: #1c1c1c;
+    border-radius: 0 3.5rem 0.5rem 0.5rem;
+}
+
+.container-data h3 {
+    margin-bottom: 1rem;
+}
+
+.container-data .container-data-wrap {
+    padding: 0 1rem 1rem;
+}
+
+#datosCsv {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#datosCsv h5 {
+    margin-bottom: 0.5rem;
+}
+
+#datosCsv p {
+    transition: opacity 200ms ease-in-out;
+    font-size: 0.75rem;
+    opacity: 0.55;
+}
+
+#datosCsv p:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+@media (max-width: 730px) {
+	.graph-container {
+        grid-template-columns: 100%;
+        gap: 3rem;
+    }
+
+    .graph-container svg {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 630px) {
+    .select-wrap {
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: flex-start;
+        padding-bottom: 2rem;
+    }
+
+    .container-collector-info .collector-grid {
+        grid-template-columns: 100%;
+        gap: 3rem;
+    }
+}

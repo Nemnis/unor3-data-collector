@@ -1,0 +1,87 @@
+/* --------- Fonts ---------- */
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.space-mono-bold-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* --- Helpers --- */
+.fh {
+	min-height: 100vh;
+}
+
+.container-line {
+	width: calc(100% - 2rem);
+    max-width: 50rem;
+    margin: 0 auto;
+    border: 1px solid #4b4b4b;
+    border-radius: 3.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.container-line .main_coming p {
+	padding: 1rem 1rem 1rem 2.5rem;
+}
+
+.p1-rl {
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+/* --------- CSS ---------- */
+*, *:after, *:before {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	background-color: #222222;
+	color: #ffffff;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.title_main {
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+main {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 3rem;
+}
+
+@media (max-width: 500px) {
+	.title_main {
+		font-size: .5rem;
+	}
+	.title_collector {
+		font-size: .7rem;
+	}
+}
