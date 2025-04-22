@@ -47,17 +47,31 @@ void setup() {
   Serial.begin(9600);
 }
 
-float randInt;
-float randomDecimal;
-float result;
+float randIntHum;
+float randomDecimalHum;
+float resultHum;
 
-float randomNumber() {
-  randInt = random(0,91);   // a random integer from -90 to 90
-  randomDecimal = random(0, 1) / 1.0; // a random decimal number from 0.00 to 0.99
-  result = randInt + randomDecimal; // a random decimal number from -90.00 to 90.99
+float randomNumberHum() {
+  randIntHum = random(60,91);
+  randomDecimalHum = random(0, 1) / 1.0;
+  resultHum = randIntHum + randomDecimalHum;
 
-  return result;
+  return resultHum;
 }
+
+float randIntTemp;
+float randomDecimalTemp;
+float resultTemp;
+
+float randomNumberTemp() {
+  randIntTemp = random(24,37);
+  randomDecimalTemp = random(0, 1) / 1.0;
+  resultTemp = randIntTemp + randomDecimalTemp;
+
+  return resultTemp;
+}
+
+// Print Values
 
 float humidityPre;
 float tempCPre;
@@ -107,8 +121,8 @@ void loop() {
   // humidityNew = SENSOR_1.readHumidity();
   // tempCNew = SENSOR_1.readTemperature();
 
-  humidityNew = randomNumber();
-  tempCNew = randomNumber();
+  humidityNew = randomNumberHum();
+  tempCNew = randomNumberTemp();
 
   // printSensorValues(SENSOR_1.readHumidity(), SENSOR_1.readTemperature());
   printSensorValues(humidityNew, tempCNew);

@@ -1,0 +1,174 @@
+[
+    {
+        "id": "3c000194c5262ee8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "963d1cd7dd55521c",
+        "type": "ftp",
+        "host": "141.136.39.74",
+        "port": "",
+        "secureOptions": "",
+        "user": "u609246844.nodered",
+        "connTimeout": "",
+        "pasvTimeout": "",
+        "keepalive": ""
+    },
+    {
+        "id": "afb202d09f46566e",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM3",
+        "serialbaud": "9600",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "f98379e92063e1ed",
+        "type": "ftp in",
+        "z": "3c000194c5262ee8",
+        "ftp": "963d1cd7dd55521c",
+        "operation": "append",
+        "filename": "dataSensors.json",
+        "localFilename": "F:\\Empresas\\MIA\\UNOr3\\_Projects\\DataCollector\\DataJson\\dataSensors.json",
+        "name": "append local file",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "c567e480cb4f1783"
+            ]
+        ]
+    },
+    {
+        "id": "6ce1a99c71826bec",
+        "type": "comment",
+        "z": "3c000194c5262ee8",
+        "name": "Upload File to FTP",
+        "info": "",
+        "x": 110,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c567e480cb4f1783",
+        "type": "debug",
+        "z": "3c000194c5262ee8",
+        "name": "debug FTP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d4b32fccd86b3a62",
+        "type": "inject",
+        "z": "3c000194c5262ee8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "f98379e92063e1ed"
+            ]
+        ]
+    },
+    {
+        "id": "6e93333351749df0",
+        "type": "comment",
+        "z": "3c000194c5262ee8",
+        "name": "Serial data from Arduino",
+        "info": "",
+        "x": 120,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "eb19f36b2417f1cd",
+        "type": "debug",
+        "z": "3c000194c5262ee8",
+        "name": "debug Arduino",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3c8951b3f050b0db",
+        "type": "file",
+        "z": "3c000194c5262ee8",
+        "name": "dataSensor",
+        "filename": "F:\\Empresas\\MIA\\UNOr3\\_Projects\\DataCollector\\DataJson\\dataSensors.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a480ca8fc3139902",
+        "type": "serial in",
+        "z": "3c000194c5262ee8",
+        "d": true,
+        "name": "Arduino Serial COM3",
+        "serial": "afb202d09f46566e",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "eb19f36b2417f1cd",
+                "3c8951b3f050b0db"
+            ]
+        ]
+    }
+]

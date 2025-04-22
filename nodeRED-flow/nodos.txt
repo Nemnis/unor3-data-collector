@@ -1,0 +1,2 @@
+node-red-contrib-ftp
+node-red-node-serialport
