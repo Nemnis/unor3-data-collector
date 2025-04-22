@@ -118,6 +118,7 @@ input.styled:checked::before {
     appearance: base-select;
     border: 2px solid #ddd;
     background: #222222;
+    color: #ffffff;
     padding: 0.25rem;
     transition: 0.4s;
     font-size: 0.8rem;

@@ -37,12 +37,12 @@ void setup() {
   TFTscreen.background(0, 0, 0);
   // write the static text to the screen
   // set the font color to white
-  TFTscreen.stroke(255, 255, 255);
+  TFTscreen.stroke(128, 61, 189);
   // write the text to the top left corner of the screen
   TFTscreen.setTextSize(1); 
   TFTscreen.text("Luis Display Tech.", 0, 0);
 
-  TFTscreen.text("v1.0", 120, 0);
+  TFTscreen.text("v1.2", 120, 0);
 
   Serial.begin(9600);
 }
@@ -82,12 +82,10 @@ float tempCNew;
 void printSensorValues(float h, float t) {
   
   // labes
-  TFTscreen.stroke(255, 255, 255);
   TFTscreen.setTextSize(1); 
   TFTscreen.stroke(0, 255, 208);
   TFTscreen.text("Humedad", 0, 25);
 
-  TFTscreen.stroke(255, 255, 255);
   TFTscreen.setTextSize(1);
   TFTscreen.stroke(0, 255, 208);
   TFTscreen.text("Temperatura", 80, 25);
@@ -137,6 +135,24 @@ void loop() {
   } else {
     Serial.print(String(humidityNew) + "," + String(tempCNew) + "\n");
   }
+
+  // Hardware Info
+  TFTscreen.setTextSize(1);
+  
+  TFTscreen.stroke(0, 255, 208);
+  TFTscreen.text("--------------------------", 0, 75);
+  
+  TFTscreen.stroke(255, 255, 255);
+  TFTscreen.text("Microcontroller", 0, 95);
+
+  TFTscreen.stroke(0, 255, 208);
+  TFTscreen.text("UNO R3", 95, 95);
+  
+  TFTscreen.stroke(255, 255, 255);
+  TFTscreen.text("Digital Sensor", 0, 110);
+  
+  TFTscreen.stroke(0, 255, 208);
+  TFTscreen.text("DHT11", 90, 110);
   
   // wait for a moment
   delay(2500);
